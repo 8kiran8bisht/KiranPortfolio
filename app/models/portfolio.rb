@@ -8,7 +8,7 @@ class Portfolio < ApplicationRecord
 	after_initialize :set_defaults
 
 	def set_defaults
-		self.main_image ||= "https://via.placeholder.com/290C/O%20https://placeholder.com/"
-		self.thumb_image ||= "https://via.placeholder.com/190C/O%20https://placeholder.com/"
+		self.main_image ||= Placeholder.image_generator(height: '190')
+		self.thumb_image ||= Placeholder.image_generator(height: '190')
 	end
 end
